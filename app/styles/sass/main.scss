@@ -1,0 +1,517 @@
+@import "config";
+$bg-level-two: rgb(255, 255, 255);
+$bg-level-link-two: rgb(0, 0, 0);
+$sub-sub-menu__link: rgba(0, 0, 0, 0.356);
+$bg-sub-sub-menu__list: rgb(0, 0, 0);
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Nunito-Regular";
+}
+.eco-dent {
+  font-family: "Lobster-Regular";
+  font-weight: 400;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+body {
+  background-color: white;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  padding: 0px;
+}
+
+//****************Навигация****************\\
+//ПК-версия
+.menu {
+  li {
+    position: relative;
+    list-style: none;
+  }
+}
+.menu__list {
+  display: flex;
+  > li {
+    > a {
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+.sub-menu__list_width{
+  width: 400px;
+}
+.sub-menu__list {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  padding: 20px 0px 0px 0px;
+
+  > li {
+    background-color: $bg-level-two;
+    width: 100%;
+    a{
+      line-height: 23px;
+    }
+    
+  }
+}
+
+.sub-menu__link {
+  color: $bg-level-link-two;
+  display: inline-block;
+  padding: 12px 10px;
+}
+
+//Мобильная версия
+
+.arrow {
+  background-image: url("../../images/dist/menu-arrrow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -10px;
+  top: 0px;
+  &.active {
+    transform: rotate(-180deg);
+  }
+  transition: 0.2s ease;
+}
+.sub-menu__arrow {
+  &.arrow {
+    right: 10px;
+    border-left: 10px solid #000;
+    border-right: none;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+}
+//проверка если мобильная версия сайта
+.menu {
+  z-index: 999;
+  a {
+    &.parent {
+      margin: 0px 30px 0px 0px;
+    }
+  }
+}
+
+body {
+  &.mouse {
+    .menu__list {
+      & > li {
+        &:hover {
+          .sub-menu__list {
+            display: block;
+            animation: fadeIn 0.4s;
+          }
+          .arrow {
+            transform: rotate(-180deg) !important;
+          }
+        }
+      }
+    }
+    .sub-menu__list {
+      & > li {
+        &:hover {
+          .sub-sub-menu__list {
+            display: block;
+            animation: fadeIn 0.4s;
+          }
+          transition: 0.4s ease;
+          background-color: #0364bf;
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  &.touch {
+    .sub-menu__list {
+      &.open {
+        display: block;
+        animation: fadeIn 0.4s;
+      }
+    }
+    .arrow {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 15px;
+  }
+  .menu__list {
+    display: block;
+  }
+  .menu__list > li {
+    margin: 0px 0px 30px 0px;
+  }
+  .sub-menu__list {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  .sub-sub-menu__list {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  .nav {
+    padding-left: 0px !important;
+  }
+  .sub-menu__list {
+    padding-left: 20px;
+  }
+}
+
+//Бургер меню
+.fixed-page {
+  overflow: hidden; /*запрещаем прокручивание страницы при открытом меню*/
+}
+
+//Отдельно внешний вид уже сайта
+
+.nav-wrapper {
+  padding-top: 15px;
+  display: flex;
+  ul {
+    z-index: 99;
+  }
+}
+.logo {
+  flex-grow: 1;
+  img {
+    max-width: 50px;
+    height: auto;
+  }
+}
+.nav-menu-wrapper {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  > ul {
+    margin-bottom: 0px;
+  }
+}
+.bot-shadow {
+  box-shadow: 0px 3px 8px -5px rgba(34, 60, 80, 0.2);
+  padding-bottom: 20px;
+}
+
+//****************Конец Навигации****************\\
+
+//****************FOOTER****************\\
+.footer {
+  background-color: #222222;
+  color: white;
+  p {
+    margin: 0px;
+  }
+}
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+.footer__insta {
+  max-width: 30px;
+}
+//****************Конец FOOTER****************\\
+//****************main-header****************\\
+.header {
+  color: white;
+}
+.header-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../images/dist/smile-girls.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.header__title {
+  padding: 350px 0px;
+  padding-top: 50px;
+  position: relative;
+  left: 50px;
+  h1 {
+    font-size: 70px;
+  }
+  blockquote {
+    font-size: 30px;
+    font-family: "Nunito-Italic";
+  }
+}
+//****************Конец main-header****************\\
+//****************services-section****************\\
+
+.service {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -10px;
+}
+.service-title {
+  text-align: center;
+  h2 {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-family: Nunito-Bold;
+  }
+  p {
+    color: #222222;
+    font-family: Nunito-Italic;
+  }
+}
+.service-card__img_wrapper {
+  overflow: hidden;
+}
+.service-card {
+  max-width: 23%;
+  margin-top: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+  }
+}
+.service-card__wrapper {
+  img {
+    max-width: 100%;
+    filter: brightness(80%);
+    transition: all 0.4s ease-out;
+  }
+  p {
+    margin-top: -5px;
+    background-color: $accent;
+    color: white;
+    padding: 10px 5px;
+  }
+}
+
+//****************Конец services-section****************\\
+
+//****************price-section****************\\
+.price-section {
+  margin-top: 80px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  box-shadow: 8px 0px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.price__list {
+  li {
+    display: flex;
+    &:not(:last-child) {
+      border-bottom: 1px solid #e5e5e5;
+    }
+    padding: 10px 0px;
+  }
+  width: 100%;
+  margin-left: 30px;
+  color: #7e7e7e;
+}
+.price__list_name {
+  flex-grow: 1;
+  padding-left: 15px;
+}
+.price__wrapper {
+  display: flex;
+}
+.price__popular {
+  max-width: 350px;
+  h2 {
+    font-weight: bold;
+  }
+}
+//****************Конец price-section****************\\
+//****************map-section****************\\
+.map-section {
+  padding-bottom: 50px;
+}
+.map {
+  display: flex;
+}
+.map-when {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-family: Nunito-Bold;
+}
+.map__map {
+  margin: 0px 15px;
+  width: 50%;
+}
+.map__adress_title {
+  font-weight: bold;
+  margin: 0px;
+}
+//****************Конец map-section****************\\
+
+//pages
+.pages-margin {
+  margin-top: 30px;
+}
+.about-oms {
+  margin-top: 30px;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 30px;
+  }
+}
+.ter-programm {
+  ol {
+    li {
+      margin-bottom: 20px;
+    }
+  }
+  &_preds {
+    margin-top: 40px;
+    font-weight: bold;
+  }
+  &_urls {
+    a {
+      color: $accent;
+    }
+  }
+}
+.postanovlenie {
+  h1 {
+    margin: 30px 0px;
+    text-align: center;
+  }
+}
+.tariff-agr {
+  h1 {
+    margin-bottom: 30px;
+  }
+  a {
+    color: $accent;
+  }
+}
+.code-oms {
+  h1 {
+    margin-bottom: 30px;
+  }
+  a {
+    color: $accent;
+  }
+}
+.perechen-oms {
+  h1 {
+    margin-bottom: 30px;
+  }
+  a {
+    color: $accent;
+  }
+}
+.conditions-med {
+  h1 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  ol {
+    > li {
+      font-family: "Nunito-Bold";
+    }
+    ul {
+      li {
+        list-style: inside;
+      }
+      padding-bottom: 10px;
+    }
+  }
+}
+.conditions-for-provision {
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  padding-bottom: 30px;
+}
+.contacts-oms{
+  h1{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &_phone{
+    font-weight: bold;
+  }
+}
+.admission-oms{
+  h1{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  padding-bottom: 30px;
+  &_app{
+    margin-top: 40px;
+  }
+}
+.for-patients{
+  h1{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  a{
+    color: $accent;
+  }
+  &_adress-title{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  &_adress-adress{
+    font-family: Nunito-Bold;
+  }
+  padding-bottom: 30px;
+}
+
+@import "media";

@@ -3,6 +3,7 @@
 /*==========  Desktop First  ==========*/
 // ≥1400px
 @include media-breakpoint-down(xxl) {
+  
 }
 
 // ≥1200px
@@ -13,18 +14,18 @@
   .map__map {
     width: 60%;
   }
-  .footer{
-    .container{
+  .footer {
+    .container {
       max-width: 100%;
     }
   }
-  .footer-wrapper{
+  .footer-wrapper {
     flex-wrap: wrap;
   }
-  .footer-copyright{
+  .footer-copyright {
     margin-top: 20px;
   }
-  .sub-menu__list_width{
+  .sub-menu__list_width {
     width: 500px;
   }
 }
@@ -161,9 +162,9 @@
       font-family: "Nunito-Italic";
     }
   }
-.sub-menu__list_width{
-  width: 400px;
-}
+  .sub-menu__list_width {
+    width: 400px;
+  }
 }
 
 // ≥576px
@@ -177,24 +178,27 @@
   .header__title {
     left: 0;
   }
-  .price__list_name{
+  .price__list_name {
     padding-left: 0px;
     line-height: 20px;
     font-size: 16px;
   }
-  .price__list_money{
+  .price__list_money {
     line-height: 20px;
     font-size: 12px;
   }
-  .price__popular{
+  .price__popular {
     margin-bottom: 15px;
   }
-  .map-when{
+  .map-when {
     margin-bottom: 30px;
   }
-.sub-menu__list_width{
-  width: 300px;
-}
+  .sub-menu__list_width {
+    width: 300px;
+  }
+  .service-page_table, .service-page_table_two {
+    font-size: 14px;
+  }
 }
 
 // ≥0px

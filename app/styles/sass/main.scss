@@ -12,6 +12,13 @@ body {
   flex-direction: column;
   font-family: "Nunito-Regular";
 }
+.visually-hidden{
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
 .eco-dent {
   font-family: "Lobster-Regular";
   font-weight: 400;
@@ -100,7 +107,7 @@ ul {
 //Мобильная версия
 
 .arrow {
-  background-image: url("../../images/dist/menu-arrrow.svg");
+  background-image: url("../images/dist/menu-arrrow.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 13px;
@@ -265,7 +272,7 @@ body {
 }
 .header-img {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../images/dist/smile-girls.jpg");
+    url("../images/dist/smile-girls.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -618,6 +625,23 @@ body {
     letter-spacing: 1px;
     border-bottom: 1px solid #e8e9eb;
     padding: 10px 0px;
+  }
+}
+.documents{
+  img{
+    width: 100%;
+    max-width: 350px;
+  }
+  padding-bottom: 30px;
+}
+.oms-schedule{
+  h1{
+    margin-bottom: 30px;
+  }
+  ol{
+    li{
+      margin-bottom: 20px;
+    }
   }
 }
 
